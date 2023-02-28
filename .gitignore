@@ -1,2 +1,5 @@
 .idea/
 venv/
+archivkompakt.egg-info/
+build/
+dist/
