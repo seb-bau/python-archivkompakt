@@ -53,6 +53,7 @@ except ArchivKompaktError as err:
 * get_docs_with_payload has a parameter "arc_id" which can be an integer or a list of integers, so you can specify  
 archive ids
 * The functions return the documents as json, the AAK format remains untouched
+* You need to request the values for scope, client_id and client_secret from Aareon support
 
 #### Next steps
-* I would like to simplyfi the document filter - currently you need to know which ID your index has
+* I would like to simplfy the document filter - currently you need to know which ID your index has
