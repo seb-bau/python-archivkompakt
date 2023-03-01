@@ -75,6 +75,16 @@ def creation_date_to_dt(ak_create_date: str):
     return datetime.fromtimestamp(t_create_timestamp)
 
 
+def build_filter(filter_key, filter_value):
+    ret_val = [
+        {
+            "ID": filter_key,
+            "Value": filter_value
+        }
+    ]
+    return ret_val
+
+
 class ArchivKompakt:
     def __init__(self, hostname: str, user: str, password: str, scope: str, client_id: str = None,
                  client_secret: str = None, auth: str = None):
@@ -124,6 +134,14 @@ class ArchivKompakt:
         else:
             response_json = response.json()
             return response_json, None
+
+    def get_index_id(self, index_name):
+        archives_json, archives_error = self.get_archives()
+        for archive in archives_json:
+            for prop in archive['Indexes']:
+                if prop['Name'] == index_name:
+                    return prop['ID']
+        return None
 
     def get_docs_with_payload(self, index_payload, chunk_size=500, arc_id=None):
         url = f"{self.hostname}/v2/search"

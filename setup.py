@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='archivkompakt',
-    version='1.0.0',
+    version='1.0.1',
     description='Aareon Archiv Kompakt connector',
     long_description='Basic implementation for communication with the Aareon Archiv Kompakt REST API',
     url='https://github.com/seb-bau/python-archivkompakt',

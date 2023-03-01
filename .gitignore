@@ -3,3 +3,4 @@ venv/
 archivkompakt.egg-info/
 build/
 dist/
+testing.py
